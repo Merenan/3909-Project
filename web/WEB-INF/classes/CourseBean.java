@@ -4,12 +4,12 @@
  **/
 
 public class CourseBean {
-    private String name
-    private String code 
-    private String professor 
-    private String room 
-    private String time 
-    private String days 
+    private String name;
+    private String code; 
+    private String professor; 
+    private String room; 
+    private String time; 
+    private String days; 
 
     /** Get Methods **/
     public String getName(){
