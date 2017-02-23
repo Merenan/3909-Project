@@ -1,7 +1,8 @@
 /**
- * ClassBean - This bean holds information on a course, to be diplayed using JSPs.
+ * CourseBean - This bean holds information on a course, to be diplayed using JSPs.
  * 
  **/
+package CourseCards;
 
 public class CourseBean {
     private String[] names;
