@@ -4,60 +4,60 @@
  **/
 
 public class CourseBean {
-    private String name;
-    private String code; 
-    private String professor; 
-    private String room; 
-    private String time; 
-    private String days; 
+    private String[] names;
+    private String[] codes; 
+    private String[] professors; 
+    private String[] rooms; 
+    private String[] times; 
+    private String[] days; 
 
     /** Get Methods **/
-    public String getName(){
-        return name;
+    public String[] getNames(){
+        return names;
     }
 
-    public String getCode(){
-        return code;
+    public String[] getCodes(){
+        return codes;
     }
 
-    public String getProfessor(){
-        return professor;
+    public String[] getProfessors(){
+        return professors;
     }
 
-    public String getRoom(){
-        return room;
+    public String[] getRooms(){
+        return rooms;
     }
 
-    public String getTime(){
-        return time;
+    public String[] getTimes(){
+        return times;
     }
 
-    public String getDays(){
+    public String[] getDays(){
         return days;
     }
 
     /** Set Methods **/
-    public void setName(String n){
-        name = n;
+    public void setNames(String[] n){
+        names = n;
     }
 
-    public void setCode(String c){
-        code = c;
+    public void setCodes(String[] c){
+        codes = c;
     }
 
-    public void setProfessor(String p){
-        professor = p;
+    public void setProfessors(String[] p){
+        professors = p;
     }
 
-    public void setRoom(String r){
-        room = r;
+    public void setRooms(String[] r){
+        rooms = r;
     }
 
-    public void setTime(String t){
-        time = t;
+    public void setTimes(String[] t){
+        times = t;
     }
 
-    public void setDays(String d){
+    public void setDays(String[] d){
         days = d;
     }
 }
