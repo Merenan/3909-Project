@@ -26,7 +26,6 @@ public class CourseServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         
         // Collect data for the course cards
         CoursesDB db = new CoursesDB(); //Set up the database
@@ -40,7 +39,7 @@ public class CourseServlet extends HttpServlet {
         // Log in to the database to get started
         db.login();
         
-        String[] results = db.query("");
+        String[] results = db.query("SELECT code, name, prof, room, time, days FROM Courses;");
         //!!!!!!!!!!! QUERY TO GET EVERYTHING IN THE TABLE !!!!!!!!!!!!!//
         for (int i=0; i<results.length; i++){
             switch (i%6){
@@ -93,6 +92,24 @@ public class CourseServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // Ready the database
+        CoursesDB db = new CoursesDB(); //Set up the database
+        db.login();
+        
+        // Collect information from the form
+        //!!!!!!!!!!!!!!! SET THE ATTRIBUTE NAMES !!!!!!!!!!!!!!!!//
+        String code = (String)request.getAttribute(null);
+        String name = (String)request.getAttribute(null);
+        String professor = (String)request.getAttribute(null);
+        String room = (String)request.getAttribute(null);
+        String time = (String)request.getAttribute(null);
+        String days = (String)request.getAttribute(null);
+        
+        // Set up the SQL update
+        db.update("INSERT INTO Courses (code,name,prof,room,time,days)"
+                + "VALUES (" + code + "," + name + "," + professor + "," 
+                + room + "," + time + "," + days + ");");
+        
         processRequest(request, response);
     }
 
@@ -103,7 +120,7 @@ public class CourseServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet used to handle data collection for course cards.";
+    }
 
 }
