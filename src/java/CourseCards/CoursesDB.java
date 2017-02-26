@@ -24,7 +24,7 @@ public class CoursesDB {
     private String error;
     private String content;
     
-    private void login() throws IOException {
+    void login() throws IOException {
         
         if (isConnected){
             return;
