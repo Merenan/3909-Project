@@ -32,8 +32,8 @@ public class CoursesDB {
         
         String url = "jdbc:mysql://localhost:3306/courses";
         String driver = "com.mysql.jdbc.Driver";
-        String username = "";
-        String password = "";
+        String username = "ACS3062987";
+        String password = "ApgOf3";
         
         try { // Try connection to database
             Class.forName(driver);
