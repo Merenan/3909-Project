@@ -35,43 +35,47 @@
                     <form method="" action="" name="">
                         <div class="row">
                             <label>Course Number:</label>
-                            <input type="text" name="">
+                            <input type="text" name="code">
                         </div>
                         <div class="row">
                             <label>Course Name:</label>
-                            <input type="text" name="">
+                            <input type="text" name="name">
                         </div>
                         <div class="row">
                             <label>Professor:</label>
-                            <input type="text" name="">
+                            <input type="text" name="prof">
                         </div>
                         <div class="row">
                             <label>Room:</label>
-                            <input type="text" name="">
+                            <input type="text" name="room">
+                        </div>
+                        <div class="row">
+                            <label>Time:</label>
+                            <input type="text" name="time">
                         </div>
                         <div id="days" class="row">
                             <label>Days:</label>
                             <div>
                                 <div class="row">
-                                    <input type="checkbox" name="Sunday" id="Sunday"><label for="Sunday">Sunday</label>
+                                    <input type="checkbox" name="days" id="Sunday"><label for="Sunday">Sunday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Monday" id="Monday"><label for="Monday">Monday</label>
+                                    <input type="checkbox" name="days" id="Monday"><label for="Monday">Monday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Tuesday" id="Tuesday"><label for="Tuesday">Tuesday</label>
+                                    <input type="checkbox" name="days" id="Tuesday"><label for="Tuesday">Tuesday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Wednesday" id="Wednesday"><label for="Wednesday">Wednesday</label>
+                                    <input type="checkbox" name="days" id="Wednesday"><label for="Wednesday">Wednesday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Thursday" id="Thursday"><label for="Thursday">Thursday</label>
+                                    <input type="checkbox" name="days" id="Thursday"><label for="Thursday">Thursday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Friday" id="Friday"><label for="Friday">Friday</label>
+                                    <input type="checkbox" name="days" id="Friday"><label for="Friday">Friday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="Saturday" id="Saturday"><label for="Saturday">Saturday</label>
+                                    <input type="checkbox" name="days" id="Saturday"><label for="Saturday">Saturday</label>
                                 </div>
                             </div>
                         </div>
