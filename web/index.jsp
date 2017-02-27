@@ -32,7 +32,7 @@
             <label id="fab" for="toggleForm"><i class="fa fa-plus" aria-hidden="true"></i></label>
             <div id="formBg">
                 <div id="formWindow" class="card">
-                    <form method="" action="" name="">
+                    <form method="POST" action="" name="">
                         <div class="row">
                             <label>Course Number:</label>
                             <input type="text" name="code">
