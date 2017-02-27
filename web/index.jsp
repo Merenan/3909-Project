@@ -8,6 +8,8 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.util.Date.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@page import="CourseCards.*"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,7 +34,7 @@
             <label id="fab" for="toggleForm"><i class="fa fa-plus" aria-hidden="true"></i></label>
             <div id="formBg">
                 <div id="formWindow" class="card">
-                    <form method="POST" action="" name="">
+                    <form method="post" action="index.jsp" name="">
                         <div class="row">
                             <label>Course Number:</label>
                             <input type="text" name="code">
