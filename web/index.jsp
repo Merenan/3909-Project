@@ -57,25 +57,25 @@
                             <label>Days:</label>
                             <div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Sunday"><label for="Sunday">Sunday</label>
+                                    <input type="checkbox" name="days" value="Sunday" id="Sunday"><label for="Sunday">Sunday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Monday"><label for="Monday">Monday</label>
+                                    <input type="checkbox" name="days" value="Monday" id="Monday"><label for="Monday">Monday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Tuesday"><label for="Tuesday">Tuesday</label>
+                                    <input type="checkbox" name="days" value="Tuesday" id="Tuesday"><label for="Tuesday">Tuesday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Wednesday"><label for="Wednesday">Wednesday</label>
+                                    <input type="checkbox" name="days" value="Wednesday" id="Wednesday"><label for="Wednesday">Wednesday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Thursday"><label for="Thursday">Thursday</label>
+                                    <input type="checkbox" name="days" value="Thursday" id="Thursday"><label for="Thursday">Thursday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Friday"><label for="Friday">Friday</label>
+                                    <input type="checkbox" name="days" value="Friday" id="Friday"><label for="Friday">Friday</label>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="days" id="Saturday"><label for="Saturday">Saturday</label>
+                                    <input type="checkbox" name="days" value="Saturday" id="Saturday"><label for="Saturday">Saturday</label>
                                 </div>
                             </div>
                         </div>
