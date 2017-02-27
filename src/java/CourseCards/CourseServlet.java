@@ -97,13 +97,11 @@ public class CourseServlet extends HttpServlet {
         db.login();
         
         // Collect information from the form
-        //!!!!!!!!!!!!!!! SET THE ATTRIBUTE NAMES !!!!!!!!!!!!!!!!//
-        String code = (String)request.getAttribute(null);
-        String name = (String)request.getAttribute(null);
-        String professor = (String)request.getAttribute(null);
-        String room = (String)request.getAttribute(null);
-        String time = (String)request.getAttribute(null);
-        String days = (String)request.getAttribute(null);
+        String name = (String)request.getAttribute("name");
+        String professor = (String)request.getAttribute("prof");
+        String room = (String)request.getAttribute("room");
+        String time = (String)request.getAttribute("time");
+        String days = (String)request.getAttribute("days");
         
         // Set up the SQL update
         db.update("INSERT INTO Courses (code,name,prof,room,time,days)"
