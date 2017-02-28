@@ -57,8 +57,16 @@ public class LoginServlet extends HttpServlet {
             if (user == null || pass == null || user.equals("") || pass.equals("")){
                 out.println("<p> Please enter a username and password! </p>");
             } else if (set.contains(user + " " + pass)) {
+                
+                // Create cookie to remember this username
+                Cookie c = new Cookie("defUser",user);
+                c.setMaxAge(60*60*24); // Set cookie's age to a day
+                response.addCookie(c);
+                
                 //Create a session on successful log in                
                 session.setAttribute("username", user);
+                
+                // Move on to next page
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");        
                 dispatcher.forward(request, response);
             } else {
@@ -81,11 +89,9 @@ public class LoginServlet extends HttpServlet {
                 
                 // UNCOMMENT THIS PLEASE //
                 //Create a session on successful profile creation               
-//                session.setAttribute("username", user);
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");        
-//                dispatcher.forward(request, response);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Login.jsp");        
-            dispatcher.forward(request, response);
+                session.setAttribute("username", user);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");        
+                dispatcher.forward(request, response);
             }// else (Username and password were entered)
         } else{// Not login or create
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Login.jsp");        
