@@ -21,10 +21,8 @@ import java.util.ArrayList;
  */
 public class LoginDB {
     private Connection connection;
-    private Statement statement;
     public boolean isConnected = false;
     private String error;
-    private String content;
     
     public void login() throws IOException {
         
@@ -40,7 +38,7 @@ public class LoginDB {
         try { // Try connection to database
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
-            
+            isConnected = true;
         }
         catch(ClassNotFoundException e){
             error = "Error loading driver: " + e;
@@ -62,7 +60,6 @@ public class LoginDB {
         } catch (SQLException sqle) {
             error = "Error with connection: " + sqle;
         }
-        content = null;
         isConnected = false;
     }// logoff
     
@@ -73,9 +70,8 @@ public class LoginDB {
 
 
         try {
-            statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO login.credentials VALUES ('MYACS','HAPPYTIMES');");
-            content = null;
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO login.credentials VALUES ('" + user + "','" + pass + "');");
         } catch (SQLException e) {
             error = "Error with update: " + e;
         }
@@ -83,7 +79,7 @@ public class LoginDB {
     
     public String query(){
         try {
-        statement = connection.createStatement();
+        Statement statement = connection.createStatement();
             
         ResultSet resultSet = statement.executeQuery("SELECT * FROM login.credentials");
         ResultSetMetaData result = resultSet.getMetaData();
@@ -92,7 +88,10 @@ public class LoginDB {
         
         while (resultSet.next()) {
             for (int i = 1; i <= cn; i++) {
-            strb.append(resultSet.getString(i) + " ");
+                if (i == 1)
+                    strb.append(resultSet.getString(i) + " ");
+                else 
+                    strb.append(resultSet.getString(i) + "/n");
             }
         }// while
         
@@ -112,7 +111,4 @@ public class LoginDB {
         return error;
     }
     
-    public String getContent() {
-        return content;
-    }
 }

@@ -71,8 +71,6 @@ public class LoginServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             } else {
                 out.println("<p>Username/password not found. </p>");
-                // TEST CODE // 
-                out.println(DB.query());
             }// else
         }// if
         else if (action.equals("create")){ // If the request is to create
@@ -85,9 +83,8 @@ public class LoginServlet extends HttpServlet {
                 out.println("<p> Please enter a username and password!</p>");
             } else {
             // If a table exists, add to it
-                DB.update(user, pass);
+            DB.update(user, pass);
                 
-                // UNCOMMENT THIS PLEASE //
                 //Create a session on successful profile creation               
                 session.setAttribute("username", user);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");        
