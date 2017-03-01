@@ -24,7 +24,7 @@ public class CoursesDB {
     private String error;
     private String content;
     
-    void login() throws IOException {
+    public void login() throws IOException {
         
         if (isConnected){
             return;
@@ -32,13 +32,14 @@ public class CoursesDB {
         
         String url = "jdbc:mysql://localhost:3306/courses";
         String driver = "com.mysql.jdbc.Driver";
-        String username = "ACS3062987";
+        String username = "root";
         String password = "ApgOf3";
         
         try { // Try connection to database
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
             statement = connection.createStatement(); // Create query statement
+            isConnected = true;
         }
         catch(ClassNotFoundException e){
             error = "Error loading driver: " + e;
@@ -48,7 +49,7 @@ public class CoursesDB {
         }
     }// login
     
-    private void logoff() throws IOException {
+    public void logoff() throws IOException {
 
         if (!isConnected) {
             return;
@@ -63,28 +64,6 @@ public class CoursesDB {
         content = null;
         isConnected = false;
     }// logoff
-    
-    public void action(String action, String command) throws IOException {
-        if (action == null) {
-            return;
-        }// if
-
-        if (action.equals("Login")) {
-            login();
-        }// if
-
-        if (action.equals("Logoff")) {
-            logoff();
-        }// if
-
-        if (action.equals("Update")) {
-            update(command);
-        }// if
-
-        if (action.equals("Query")) {
-            query(command);
-        }// if
-    }// action
     
     public void update(String command) throws IOException {
         if (!isConnected) {
@@ -120,14 +99,15 @@ public class CoursesDB {
             ResultSetMetaData result = resultSet.getMetaData();
             int cn = result.getColumnCount();
             while (resultSet.next()) {
-                // Iterate the entire set, and populate teh Array List
+                // Iterate the entire set, and populate the Array List
                 for (int i = 1; i <= cn; i++) {
                     list.add(resultSet.getString(i));
                 }// for
             }// while
             
             // Convert ArrayList to String[] and return it
-            return (String[]) list.toArray();
+            String[] everything = list.toArray(new String[list.size()]);
+            return everything;
         } catch (SQLException e) {
             error = "Error with query: " + e;
         }// catch
