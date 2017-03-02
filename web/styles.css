@@ -109,7 +109,44 @@ input { font-family: 'Open Sans', sans-serif; }
     #headers {
         align-items: flex-end;
     }
-        
+
+.icon {
+    display: flex;
+    height: 24px;
+    width: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    display: block;
+    width: 25vw;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    
+    transform: translateY(-50%);
+}
+    #login h1 { 
+        text-align: center;
+    }
+    #login .row.tall {
+        display: flex;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        align-items: center;
+    }
+    #login .icon {
+        margin-right: 6px;
+    }
+    #login input {
+        height: calc(100% - 16px);
+        padding: 6px;
+        width: 100%;
+    }
+
 #fab {
     position: absolute;
     display: inline-block;
